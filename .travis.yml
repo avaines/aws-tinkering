@@ -1,6 +1,15 @@
 # .travis.yml
 
-language: generic
+branches:
+  only:
+    - master
+
+before_install:
+  - curl -sLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/0.11.14/terraform_0.11.14_linux_amd64.zip
+  - unzip /tmp/terraform.zip -d /tmp
+  - mkdir ~/bin
+  - mv /tmp/terraform ~/bin
+  - export PATH="~/bin:$PATH"
 
 jobs:
   include:
