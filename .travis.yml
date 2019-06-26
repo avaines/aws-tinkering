@@ -1,0 +1,9 @@
+# .travis.yml
+
+language: generic
+
+jobs:
+  include:
+    - stage: Bootstrap account
+      script:
+        - make terraform-bootstrap env=dev
