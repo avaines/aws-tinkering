@@ -15,4 +15,8 @@ jobs:
   include:
     - stage: Bootstrap account
       script:
-        - make terraform-bootstrap env=dev
+        - make terraform-bootstrap env=global
+
+    - stage: Deploy Bastion-host
+      script:
+        - make terraform-bastion-host env=dev
