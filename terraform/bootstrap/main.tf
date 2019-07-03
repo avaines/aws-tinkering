@@ -21,19 +21,19 @@ resource "aws_s3_bucket" "state" {
 
 
 
-resource "aws_dynamodb_table" "locking" {
-  name           = "${var.aws_account_name}-${var.aws_account_id}-lock"
-  read_capacity  = "20"
-  write_capacity = "20"
-  hash_key       = "LockID"
+# resource "aws_dynamodb_table" "locking" {
+#   name           = "${var.aws_account_name}-${var.aws_account_id}-lock"
+#   read_capacity  = "20"
+#   write_capacity = "20"
+#   hash_key       = "LockID"
 
-  attribute {
-    name = "LockID"
-    type = "S"
-  }
+#   attribute {
+#     name = "LockID"
+#     type = "S"
+#   }
 
-  tags = {
-    "Name" = "State Bucket"
-  }
-}
+#   tags = {
+#     "Name" = "State Bucket"
+#   }
+# }
 
