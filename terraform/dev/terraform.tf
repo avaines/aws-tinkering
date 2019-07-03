@@ -4,6 +4,5 @@ terraform {
     bucket  = "awstinkering-623152099147-state"
     key     = "test-vm/terraform.tfstate"
     region  = "us-east-1"
-    dynamodb_table = "awstinkering-623152099147-lock"
   }
 }

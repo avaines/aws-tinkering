@@ -1,6 +1,5 @@
 #dev.tfvars
 
-# Global
 env_name = "dev"
 aws_account_id = "623152099147"
 aws_account_name = "awstinkering"    
