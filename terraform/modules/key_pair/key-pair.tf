@@ -9,12 +9,12 @@ resource "tls_private_key" "authentication" {
 }
 
 resource "aws_secretsmanager_secret" "authentication" {
-  name        = "ssh/${aws_key_pair.authentication.name}"
-  description = "ssh/${aws_key_pair.authentication.name}"
+  name        = "ssh/${aws_key_pair.authentication.key_name}"
+  description = "ssh/${aws_key_pair.authentication.key_name}"
 
 
   tags = "${merge(var.tag_map, map(
-    "Name", "${aws_key_pair.authentication.name}"
+    "Name", "${aws_key_pair.authentication.key_name}"
     ))}"
 
   
