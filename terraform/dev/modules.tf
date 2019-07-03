@@ -3,7 +3,7 @@ module "key_pair" {
 
   key_name = "${var.env_name}-key"
 
-  tags = {
+  tag_map = {
     Environment = "${var.env_name}"
     Version = "${var.tag_version}"
     AutoStart = "${var.tag_start_stop_auto}"
@@ -18,11 +18,10 @@ module "bastion_host" {
   hostname = "${var.env_name}-bastion-host"
 
   size = "${var.bastion_size}"
-  #ami = "${var.bastion_ami}"
   key_pair = "${module.key_pair.name}"
   inbound_cidr = ["${var.bastion_inbound_cidr}"]
 
- tags = {
+ tag_map = {
     Environment = "${var.env_name}"
     Version = "${var.tag_version}"
     AutoStart = "${var.tag_start_stop_auto}"

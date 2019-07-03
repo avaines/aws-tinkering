@@ -2,7 +2,7 @@
 
 #Bastion Host
 variable hostname {}
-variable ami {}
+variable size {}
 variable key_pair {}
 variable inbound_cidr {}
 
