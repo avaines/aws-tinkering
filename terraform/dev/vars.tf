@@ -17,6 +17,4 @@ variable tag_end_time {}
 
 #Bastion Host
 variable bastion_size {}
-variable bastion_ami {}
-variable bastion_key_pair {}
 variable bastion_inbound_cidr {}
