@@ -5,7 +5,7 @@ resource "aws_security_group" "host_access" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = "${var.inbound_cidr}"
+    cidr_blocks = ["${var.inbound_cidr}"]
   }
 
   egress {
