@@ -1,18 +1,33 @@
+module "key_pair" {
+  source = "../modules/key_pair"
+
+  key_name = "${var.env_name}-key"
+
+  tags = {
+    Environment = "${var.env_name}"
+    Version = "${var.tag_version}"
+    AutoStart = "${var.tag_start_stop_auto}"
+    Start-Time = "${var.tag_start_time}"
+    Stop-Time = "${var.tag_start_time}"
+  }
+}
+
 module "bastion_host" {
-    source = "../modules/bastion_host"
+  source = "../modules/bastion_host"
 
-    env_name = "${var.env_name}"
-    aws_region = "${var.aws_region}"
+  hostname = "${var.env_name}-bastion-host"
 
-    tag_owner = "${var.tag_owner}"
-    tag_version = "${var.tag_version}"
-    tag_start_stop_auto = "${var.tag_start_stop_auto}"
-    tag_start_time = "${var.tag_start_time}"
-    tag_end_time = "${var.tag_end_time}"
+  size = "${var.bastion_size}"
+  #ami = "${var.bastion_ami}"
+  key_pair = "${module.key_pair.name}"
+  inbound_cidr = ["${var.bastion_inbound_cidr}"]
 
-    bastion_size = "${var.bastion_size}"
-    bastion_ami = "${var.bastion_ami}"
-    bastion_key_pair = "${var.bastion_key_pair}"
-    bastion_inbound_cidr = "${var.bastion_inbound_cidr}"
+ tags = {
+    Environment = "${var.env_name}"
+    Version = "${var.tag_version}"
+    AutoStart = "${var.tag_start_stop_auto}"
+    Start-Time = "${var.tag_start_time}"
+    Stop-Time = "${var.tag_start_time}"
+  }
 
 }
