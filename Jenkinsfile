@@ -12,7 +12,7 @@ pipeline {
         timeout(time: 2, unit: 'HOURS')
     }
     agent {
-        agent any
+        any
     }
     stages {
         stage('Deploy to non-production environments') {
