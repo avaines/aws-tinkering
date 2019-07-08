@@ -15,8 +15,12 @@ variable tag_start_stop_auto {}
 variable tag_start_time {}
 variable tag_end_time {}
 
-#Bastion Host
-variable bastion_size {}
-variable bastion_inbound_cidr {
+# Web Server
+variable instance_size {}
+variable inbound_cidr_ssh {
+    type = "list"
+}
+
+variable inbound_cidr_frontend {
     type = "list"
 }
