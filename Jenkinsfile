@@ -4,8 +4,7 @@ pipeline {
         choice(
             choices: ['dev', 'prod'], 
             description: 'Which environment to build?', 
-            name: 'ENVIRONMENT',
-            defaultValue: 'dev'
+            name: 'ENVIRONMENT'
         )
     }
     options {
