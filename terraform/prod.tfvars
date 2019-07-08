@@ -1,7 +1,7 @@
-#stage.tfvars
+# prod.tfvars
 
 # Global
-env_name = "stage"
+env_name = "prod"
 aws_account_id = "623152099147"
 aws_account_name = "awstinkering"    
 aws_region = "us-east-1"

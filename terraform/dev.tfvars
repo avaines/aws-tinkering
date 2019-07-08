@@ -1,4 +1,4 @@
-#dev.tfvars
+# dev.tfvars
 
 env_name = "dev"
 aws_account_id = "623152099147"

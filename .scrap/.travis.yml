@@ -18,6 +18,11 @@ jobs:
     #   script:
     #     - make terraform-bootstrap env=global
 
-    - stage: Deploy Bastion-host
+    - stage: Deploy Dev
       script:
         - make terraform-bastion-host env=dev
+    
+    - stage: Deploy Bastion-host
+      if: branch = master AND tag =~ ^release
+      script:
+        - make terraform-bastion-host env=prod
