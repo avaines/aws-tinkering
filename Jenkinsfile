@@ -1,6 +1,6 @@
 pipeline {
     parameters {
-        string(name: 'DEFAULT_BRANCH', defaultValue: 'master', description: 'Default branch so you can overwrite the conditions'),
+        string(name: 'DEFAULT_BRANCH', defaultValue: 'master', description: 'Default branch so you can overwrite the conditions')
         choice(
             choices: ['dev', 'prod'], 
             description: 'Which environment to build?', 
