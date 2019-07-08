@@ -1,7 +1,7 @@
 module "key_pair" {
   source = "../modules/key_pair"
 
-  key_name = "${var.env_name}-key"
+  key_name = "${var.aws_region}-${var.env_name}-key"
 
   tag_map = {
     Environment = "${var.env_name}"
