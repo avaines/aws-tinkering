@@ -14,7 +14,7 @@ data "aws_ami" "amazon-linux-2" {
 }
 
 
-resource "aws_instance" "bastion-host" {
+resource "aws_instance" "web-server" {
   ami = "${data.aws_ami.amazon-linux-2.id}"
   instance_type = "${var.size}"
   key_name = "${var.key_pair}"

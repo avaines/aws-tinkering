@@ -13,6 +13,8 @@ tag_start_time = ""
 tag_end_time = ""
 
 
-# Bastion-host
-bastion_size = "t2.micro"
-bastion_inbound_cidr = ["0.0.0.0/0"]
+# Web-Server
+instance_size = "t2.micro"
+inbound_cidr_ssh = ["0.0.0.0/0"]
+inbound_cidr_frontend = ["0.0.0.0/0"]
+

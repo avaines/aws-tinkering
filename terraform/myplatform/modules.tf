@@ -12,14 +12,15 @@ module "key_pair" {
   }
 }
 
-module "bastion_host" {
-  source = "../modules/bastion_host"
+module "web_server" {
+  source = "../modules/web_server"
 
-  hostname = "${var.env_name}-bastion-host"
+  hostname = "${var.env_name}-web-server"
 
-  size = "${var.bastion_size}"
+  size = "${var.instance_size}"
   key_pair = "${module.key_pair.name}"
-  inbound_cidr = ["${var.bastion_inbound_cidr}"]
+  inbound_cidr_ssh = ["${var.inbound_cidr_ssh}"]
+  inbound_cidr_frontend = ["${var.inbound_cidr_frontend}"]
 
  tag_map = {
     Environment = "${var.env_name}"

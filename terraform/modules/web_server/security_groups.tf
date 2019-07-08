@@ -5,7 +5,14 @@ resource "aws_security_group" "host_access" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["${var.inbound_cidr}"]
+    cidr_blocks = ["${var.inbound_cidr_ssh}"]
+  }
+
+    ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["${var.inbound_cidr_frontend}"]
   }
 
   egress {
