@@ -13,7 +13,7 @@ pipeline {
     }
     agent any
     stages {
-        stage('Deploy to non-production environments') {
+        stage('Terraform') {
             steps {
                 script {
                     sh "make terraform-build env=${params.ENVIRONMENT}"
