@@ -11,9 +11,7 @@ pipeline {
         disableConcurrentBuilds()
         timeout(time: 2, unit: 'HOURS')
     }
-    agent {
-        any
-    }
+    agent any
     stages {
         stage('Deploy to non-production environments') {
             steps {
